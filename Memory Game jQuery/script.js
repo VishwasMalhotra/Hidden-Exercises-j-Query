@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#game_table').hide();
-    x = true;
-    i = 0;    
+    x = true; 
+    a = 0; 
     clickCounter = 0;
     var lastclicked;
     var secondclicked; 
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
             if ($('td').find('img:visible').length == 36) {
                 clearInterval(refreshIntervalId);
-                alert("You Win! You took " + i + " seconds!");
+                alert("You Win! You took " + a + " seconds!");
                 $('#game_table').hide();
             }
         }
@@ -104,8 +104,8 @@ $(document).ready(function() {
         $("#clone").prop("disabled", true);
         $('#game_table').show();
         refreshIntervalId = setInterval(function() {
-            i++;
-            $("#timer").text("Timer(s):" + " " + i);
+            a++;
+            $("#timer").text("Timer(s):" + " " + a);
         }, 1000);
     });
 });
