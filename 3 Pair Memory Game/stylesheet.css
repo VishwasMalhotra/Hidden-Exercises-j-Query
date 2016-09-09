@@ -1,0 +1,27 @@
+body {
+    background-color: #ececec;
+}
+#game_table {
+    width: 50%;
+    background: white;
+    position: relative;
+}
+#game_table td {
+    border: 1px solid #ececec;
+    cursor: pointer;
+    height: 85px;
+    width: 85px;
+    padding-left: 20px;
+    position: relative;
+}
+#game_table td:hover {
+    background-color: #DDDDDD;
+}
+img {
+    width: 100%;
+}
+button {
+    height: 20px;
+    width: 100px;
+    align: center;
+}
