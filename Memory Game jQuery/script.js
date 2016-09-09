@@ -23,8 +23,6 @@ $(document).ready(function() {
         numbersArray.push(i);
     }
 
-    var secondImages = images.slice();
-
     for (i = 0; i < images.length; i++) {
         one = numbersArray[Math.floor(Math.random() * numbersArray.length)];
 
