@@ -1,0 +1,31 @@
+#container {
+	width: 70%;
+	margin-left: 10%;
+	padding: 5px 5px 5px 5px;
+}
+#one {
+	float: right;
+	padding: 5px 5px 5px 5px;
+}
+button {
+	width:100px;
+	height: 20px;
+}
+#two {
+	float: left;
+	padding: 5px 5px 5px 5px;
+}
+#containerTwo {
+	border: 1px solid black;
+	width: 70%;
+	margin-left: 10%;
+	margin-top: 20%;
+}
+#userList {
+	float: right;
+	padding: 5px 5px 5px 5px;
+}
+#todoList {
+	float: left;
+	padding: 5px 5px 5px 5px;
+}

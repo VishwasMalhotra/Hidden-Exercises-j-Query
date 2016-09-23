@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>To-Do App</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="stylesheet.css"/>
+      <script src="script.js"></script>
+   </head>
+   <body>
+      <div id="container">
+         <div id="one">
+            <button id="newUser"> Create User</button><br/><br/>
+            <form id="userCreation">
+               <input type="text" id="createUser">
+               <input type="submit" value="Add"> 
+            </form>
+            <br/>
+            <button id="createToDo"> Create To-Do</button>
+         </div>
+         <div id="two">
+            <form id="userTodo">
+               <input type="text" id="todo"> 
+               <select id="userSelect">
+               </select>
+               <input type="submit" value="Save">
+            </form>
+         </div>
+      </div>
+      <div id="containerTwo">
+         <div id="userList">
+            <h3>Users List</h3>
+            <ul id="ulName"></ul>
+         </div>
+         <div id="todoList">
+            <h3>To-Do List</h3>
+            <ul id="todoListul"></ul>
+         </div>
+      </div>
+   </body>
+</html>
