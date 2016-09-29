@@ -2,20 +2,21 @@ $(document).ready(function() {
 	
 // Saving Values in a new Row.	
     rowAppend = function(newRow) {
-        newRow.parent().siblings('td:first').text(nameval);
-        newRow.parent().siblings('td:first').next().text(emailval);
+    	// debugger
+        newRow.closest('td').siblings('td:first').text(nameVal);
+        newRow.closest('td').siblings('td:first').next().text(emailVal);
         $('#addRow').attr('disabled', false);
-        editButton = newRow.parent().html('').append($('<button>', {id: 'edit'}).text("Edit"));
+        editButton = newRow.closest('td').html('').append($('<button>', {id: 'edit'}).text("Edit"));
         editButton.append($('<button>', {id: 'delete'}).text("Delete"));
     }
 
 // Editing the Name or E-mail.    
     editRow = function(editingRow) {
-        nameValTwo = editingRow.parent().siblings('td:first').html();
-        emailValTwo = editingRow.parent().siblings('td:first').next().html();
-        editingRow.parent().siblings('td:first').html('').append($('<input>', {id: "nameInput"}).val(nameValTwo));
-        editingRow.parent().siblings('td:first').next().html('').append($('<input>', {id: "email"}).val(emailValTwo));
-        editingRow.parent().html('').append($('<button>', {class: 'save'}).text("Save"));
+        nameValTwo = editingRow.closest('td').siblings('td:first').html();
+        emailValTwo = editingRow.closest('td').siblings('td:first').next().html();
+        editingRow.closest('td').siblings('td:first').html('').append($('<input>', {id: "nameInput"}).val(nameValTwo));
+        editingRow.closest('td').siblings('td:first').next().html('').append($('<input>', {id: "email"}).val(emailValTwo));
+        editingRow.closest('td').html('').append($('<button>', {class: 'save'}).text("Save"));
     }
 
 // Appending a new Row.
@@ -26,10 +27,9 @@ $(document).ready(function() {
 
 // Checking and Saving the values.
     $("#infoTable").on('click', ".save", function() {
-        nameval = $('#nameInput').val().trim();
-        emailval = $('#email').val().trim();
-
-        if (nameval == '' || emailval == '') {
+        nameVal = $('#nameInput').val().trim();
+        emailVal = $('#email').val().trim();
+        if (nameVal == '' || emailVal == '') {
             alert("Please Fill the Details!");
         } else {
             row = $(this);
@@ -45,6 +45,6 @@ $(document).ready(function() {
 
 // Deleting a Row
     $("#infoTable").on('click', '#delete', function() {
-        $(this).parent().parent().remove();
+        $(this).closest('td').closest('tr').remove();
     });
 });
