@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Restaurant Order Page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="stylesheet.css"/>
+      <script src="script.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/basic-template.css" rel="stylesheet" />
+   </head>
+   <body>
+      <center>
+         <img src="vinsol.png" class="padding-top-10"/>
+      </center>
+      <div class="row">
+         <div class="col-md-8 divStyle padding-top-10 margin-left-30">
+            <div class="col-md-2">
+               <h3>Breads</h3>
+               <select name="user" id="breads" size="4">
+                  <option data-price="50">White</option>
+                  <option data-price="100">Brown</option>
+                  <option data-price="200">Multigrain</option>
+               </select>
+            </div>
+            <div class="col-md-2">
+               <h3>Filings</h3>
+               <select name="user" id="fillings" size="4">
+                  <option data-price="100">Veg </option>
+                  <option data-price="200">Non-Veg</option>
+               </select>
+            </div>
+            <div class="col-md-2">
+               <h3>Sauces</h3>
+               <select name="user" id="sauces" size="4">
+                  <option data-price="20">Tomato</option>
+                  <option data-price="40">Mint</option>
+                  <option data-price="60">Mayo</option>
+                  <option data-price="80">South West</option>
+               </select>
+            </div>
+            <div class="col-md-2">
+               <h3>Drinks</h3>
+               <select name="user" id="drinks" size="4">
+                  <option data-price="30">Coke</option>
+                  <option data-price="50">Smoothies</option>
+                  <option data-price="100">Mojitos</option>
+               </select>
+            </div>
+         </div>
+         <div class="col-md-2 divStyle padding-top-10">
+            <h2>Total Sales </h2>
+            <div id="totalSales" data-total=0></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-8 divStyle padding-top-10 margin-left-30">
+            <center>
+               <h2> Current Order Status </h2>
+               <div id="container">
+                  <div class="pendingOrder col-md-4">
+                     <h4>Item</h4>
+                     <a class=" a breads"></a><br/>
+                     <a class=" a fillings"></a><br/>
+                     <a class=" a sauces"></a><br/>
+                     <a class=" a drinks"></a><br/>                  
+                  </div>
+                  <div class="pendingOrder col-md-4">
+                     <h4>Price</h4>
+                     <a class=" a breadsPrice"></a><br/>
+                     <a class=" a fillingsPrice"></a><br/>
+                     <a class=" a saucesPrice"></a><br/>
+                     <a class=" a drinksPrice"></a><br/>  
+                  </div>
+                  <div id="totalPrice"></div>
+                  <button id="placeOrder">Place Order</button><br/>
+               </div>
+            </center>
+         </div>
+         <div id="orders" class="col-md-2 divStyle padding-top-10">
+            <h3>Today's Orders</h3>
+         </div>
+      </div>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   </body>
+</html>
