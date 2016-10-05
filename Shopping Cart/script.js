@@ -113,8 +113,14 @@ $(document).ready(function() {
         $("#checkout").text('Total: '+newTotal+'');
     }
     
-// Removing items from cart.
+// Removing items from cart and reducing Total Amount.
     $("#infoTable").on("click",".remove", function(){
+        reduceAmount = $(this).closest('td').siblings('td:last').html();
+        originalAmount = $("#checkout").attr('data-total');
+        newTotalLatest = parseFloat(originalAmount) - parseFloat(reduceAmount);
+        newTotalLatest.toFixed(2);
+        $("#checkout").attr('data-total' , newTotalLatest);
+        $("#checkout").text('Total: '+newTotalLatest+'');
         decreaseCount();
         $(".addToCart").attr("disabled", false);
         $(this).closest('td').closest('tr').remove();
