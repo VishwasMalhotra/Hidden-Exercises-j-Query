@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Shopping Cart</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="stylesheet.css"/>
+      <script src="script.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/basic-template.css" rel="stylesheet" />
+   </head>
+   <body>
+      <center>
+         <img class="margin-top-3" src="vinsol.png"/>
+      </center>
+      <ul id="tabs" class="nav nav-tabs margin-top-3">
+         <li class="active" id="products"><a class="a">Products</a></li>
+         <li id="myCart"><a class="a">My Cart (0)</a></li>
+      </ul>
+      <div id="mainContainer">
+         <div id="items">
+            <label>Search:
+            <input id="searchVal" class="margins" type="textbox" placeholder="Search">
+            <button id="search">Search</button>
+            <button>Clear</button>
+            </label>
+            <label class="margins">
+               Categories:
+               <select id="categories" class="margins">
+                  <option>All</option>
+                  <option>Computers</option>
+                  <option>Cameras</option>
+               </select>
+            </label>
+         </div>
+         <div style="padding-left:20px;" class="row margin-top-3 itemlist computers">
+            <div class="col-md-2 border">
+               <img class="productImages" src="macbookpro.jpg">
+            </div>
+            <div class="heading col-md-6 border">
+               <!-- <h4 class="head">Apple MacBook Pro MA464LL/A 15.4" Notebook PC</h4> -->
+               <!-- <h5 class="sub-head">Category: Computers</h5> -->
+               <p class="aboutProduct">The Intel Core Duo powering MacBook Pro is actually two processors build
+                  into a single chip.
+               </p>
+               <!-- <h3>Price : 2299.99</h3> -->
+            </div>
+            <div class="col-md-2 border">       
+               <label class="margins">Quantity:<input type="textbox" value="1" size="5"></label>
+            </div>
+            <div class="cart col-md-2 border">
+            </div>
+         </div>
+         <div style="padding-left:20px;" class="row margin-top-3 itemlist computers">
+            <div class="col-md-2 border">
+               <img class="productImages" src="sonyvaio.jpg">
+            </div>
+            <div class="heading col-md-6 border">
+               <!-- <h4 class="head">Sony VAIO 11.1" Notebook PC</h4> -->
+               <!-- <h5 class="sub-head">Category: Computers</h5> -->
+               <p class="aboutProduct">
+                  Weighing in at just an amazing 2.84 pounds and offering a sleek, durable carbon-fiber
+                  case in charcoal black. And with 4 to 10 hours of standard battery life, it has a stamina
+                  to power you through your most demanding application.
+               </p>
+               <!-- <h3>Price : 2699.99</h3> -->
+            </div>
+            <div class="col-md-2 border">       
+               <label class="margins">Quantity:<input type="textbox" value="1" size="5"></label>
+            </div>
+            <div class="cart col-md-2 border">
+            </div>
+         </div>
+         <div style="padding-left:20px;" class="row margin-top-3 itemlist cameras">
+            <div class="col-md-2 border">
+               <img class="productImages" src="canon.jpg">
+            </div>
+            <div class="heading col-md-6 border">
+               <!-- <h4 class="head">Canon Digital Rebel XT 8MP Digital SLR Camera</h4> -->
+               <!-- <h5 class="sub-head">Category: Cameras</h5> -->
+               <p class="aboutProduct">
+                  Canon EOS Digital Rebel XT SLR adds resolution, speed, extra creative control, and
+                  enhanced confort in the hand to one of the smallest and lightest digital camera
+                  in its class.
+               </p>
+               <!-- <h3>Price : 550.00</h3> -->
+            </div>
+            <div class="col-md-2 border">       
+               <label class="margins">Quantity:<input type="textbox" value="1" size="5"></label>
+            </div>
+            <div class="cart col-md-2 border">
+            </div>
+         </div>
+      </div>
+      <div id="cartItems">
+         <center>
+            <table id="infoTable">
+               <tr>
+                  <th>Products</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                  <th></th>
+               </tr>
+            </table>
+         </center>
+         <div data-total=0 id="checkout"></div>
+      </div>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   </body>
+</html>

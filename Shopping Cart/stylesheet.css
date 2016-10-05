@@ -1,0 +1,45 @@
+*{overflow-x: hidden;}
+.a {
+   text-decoration: none;
+    color: black;
+    pointer-events: none;
+}
+.margin-top-3 {
+	margin-top: 3%;
+}
+#tabs {
+	padding-left:38%;
+}
+#items {
+	padding-top:20px;
+	text-align:center;
+
+}
+.margins {
+	 margin-left:10px;
+	 margin-right:10px;
+}
+.boreder {
+	border: 1px solid black;
+}
+.productImages {
+	height:100px;
+	width: 200px;
+	border: 1px solid black;
+}
+.p {
+	font-size: 15px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table,th,td {
+    border: 1px solid black;
+    text-align: center;
+}
+#checkout{
+	font-size: 30px;
+	font-weight: 700;
+	text-align: right;
+}
