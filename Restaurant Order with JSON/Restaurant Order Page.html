@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Restaurant Order Page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="stylesheet.css"/>
+      <script src="restaurant_order.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/basic-template.css" rel="stylesheet" />
+   </head>
+   <body>
+      <center>
+         <img src="vinsol.png" class="padding-top-10"/>
+      </center>
+      <div class="row">
+         <div class="col-md-8 menu divStyle padding-top-10 margin-left-30">
+         </div>
+         <div class="col-md-2 divStyle padding-top-10">
+            <h2>Total Sales </h2>
+            <div id="totalSales" data-total=0></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-8 orderTab divStyle padding-top-10 margin-left-30">
+            <center>
+               <u><h2> Current Order Status </h2></u>
+               <div id="container">
+               </div>
+            </center>
+         </div>
+         <div id="orders" class="col-md-2 divStyle padding-top-10">
+            <h3>Today's Orders</h3>
+         </div>
+      </div>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   </body>
+</html>

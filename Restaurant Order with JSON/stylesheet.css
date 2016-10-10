@@ -1,0 +1,18 @@
+*{overflow-x: hidden;}
+.divStyle {
+		border: 1px solid black;
+}
+.padding-top-10 {
+	padding-top: 10px;
+}
+.margin-left-30 {
+	margin-left: 30px;
+}
+.margin-top-5 {
+	margin-top: 5px;
+}
+#totalSales{
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+}
