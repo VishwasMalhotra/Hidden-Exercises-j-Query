@@ -53,60 +53,76 @@ $(document).ready(function() {
 // Appending the Menu options.
 //Assigning Data attribute 'price', to the menu options.
         $.each(item.products, function(x, info) {
-            menuSelect.append($($('<option>').attr('data-price', info.price)).text(info.name));
+            menuSelect.append($($('<option>').val(info.name).attr('data-price', info.price)).text(info.name));
         });
+
 // Calling a on click function on the select list.
-        $(menuSelect).on("click", function() {
+        $(menuSelect).on("click", function() { 
             $("#PlaceOrder").show();
             $("#totalPrice").show();
             menuListId = $('option:selected', this).closest('select').attr('id');
             newDiv = $($('<div>', {class:$(this).closest('select').attr('id')}).css("text-align", "center"));
             itemPrice = $('option:selected', this).attr('data-price');
-            newDiv.attr('data-divattr', itemPrice);
-            $("." + menuListId).remove();
-            $("#container").append(newDiv);
-            $(newDiv).css("font-weight", "700");
-            newDiv.append($(this).closest('select').attr('id') + ': ' + $('option:selected', this).text());
-            newDiv.append(' Rs.' + itemPrice);
-            updateAmount();
-        });
-// Removing a item on Double Click.
-        $(menuSelect).dblclick(function() {
-            $("option:selected", this).prop("selected", false);
-            newDiv.remove($('option:selected', this).text());
-            updateAmount();
+            if(itemPrice != undefined) {
+                newDiv.attr('data-itemprice', itemPrice);
+                $("." + menuListId).remove();
+                $("#container").append(newDiv);
+                $(newDiv).css("font-weight", "700");
+                newDiv.append($(this).closest('select').attr('id') + ': ' + $('option:selected', this).text());
+                newDiv.append(' Rs.' + itemPrice);
+                updateAmount();
+            } 
+            else {
+            }
+            if($("option:selected", this).val() == $(this).attr('data-selected')){
+                $("option:selected", this).prop("selected", false);
+                newDiv.remove($('option:selected', this).text());
+                $(this).attr('data-selected', '')
+                updateAmount();
+            }
+            $(this).attr('data-selected', $("option:selected", this).val());
         });
     });
 
+// Placing the order.
     $("#PlaceOrder").on('click', function() {
         newOrder();
+        cleanUp();
         customerDetails();
         updateTotalAmount();
 
     });
+
 // Updating the Total Amount of the current order.
     function updateAmount() {
         newTotal = 0;
-        $("#container").find("[data-divattr]").each(function() {
-            newTotal += parseInt($(this).attr('data-divattr'));
+        $("#container").find("[data-itemprice]").each(function() {
+            newTotal += parseInt($(this).attr('data-itemprice'));
         });
         $("#totalPrice").attr('data-billedamount', newTotal);
         $("#totalPrice").text("Total amount :" + newTotal);
     }
+
 // Appending the new div for a new order.
     function newOrder() {
-        $("#orders").append($("<div>", {id: customerOrderId}));
-        $("#container").find("[data-divattr]").each(function() {
-            newOrderDiv = $("#" + customerOrderId + "").css({"border": "1px solid black","text-align": "center"});
+        newOrderDiv = $("<div>", {id: customerOrderId});
+        $("#orders").append(newOrderDiv);
+        $("#container").find("[data-itemprice]").each(function() {
+            newOrderDiv.css({"border": "1px solid black","text-align": "center"});
             $(this).removeClass().css("font-weight", "").appendTo(newOrderDiv);
         });
         $(newOrderDiv).prepend($('<b>').text("Order Number: " + customerOrderId));
         $(newOrderDiv).append($('<b>').text($("#totalPrice").text()));
         customerOrderId++
+    }
+
+// Cleaning Up!
+    function cleanUp(){
         $("#PlaceOrder").hide();
         $("#totalPrice").hide();
-        $("option:selected").removeAttr("selected");
+        $("option:selected").removeAttr("selected");        
     }
+
 // Updating the Total Sales.
     function updateTotalAmount() {
         billedAmount = $("#totalPrice").attr('data-billedamount');
@@ -115,17 +131,21 @@ $(document).ready(function() {
         $("#totalSales").attr('data-total', dayTotal);
         $("#totalSales").text("Rs. " + dayTotal);
     }
-// Asking for Customer Details
-    function customerDetails() {
-        customerName = prompt("Please enter customer's name", "").trim();
-        customerContactNumber = prompt("Please enter customer's contact number", "").trim();;
-        if (customerName && customerContactNumber != null) {
-        	$(newOrderDiv).prepend("<hr/>");
-            $(newOrderDiv).prepend($('<b>').text("Customer Number: " + customerContactNumber));
-        	$(newOrderDiv).prepend("<br/>");
-            $(newOrderDiv).prepend($("<b>").text("Customer Name: " + customerName));
+
+// Input Name and Number.    
+    function customerDetails(){
+        promptFor("Customer Number :");
+        promptFor("Customer Name :");
+    }
+    
+// Validating and Appending.
+    function promptFor(details){
+       customerContact = prompt(details);
+        if((customerContact!= null) && (customerContact.trim() != "") && (customerContact.length <=10)) {
+            $(newOrderDiv).prepend("<br/>");
+            $(newOrderDiv).prepend($('<b>').text(details + customerContact));
         } else {
-            return customerDetails();
+            promptFor(details);
         }
     }
 });
