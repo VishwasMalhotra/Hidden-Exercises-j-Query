@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Shopping Cart</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="stylesheet.css"/>
+      <script src="script.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/basic-template.css" rel="stylesheet" />
+   </head>
+   <body>
+      <center>
+         <img class="margin-top-3" src="vinsol.png"/>
+      </center>
+      <ul id="tabs" class="nav nav-tabs margin-top-3">
+         <li class="active" id="productsTab"><a class="a">Products</a></li>
+         <li id="myCartTab"></li>
+      </ul>
+      <div id="mainContainer">
+         <div id="items">
+            <label>Search:
+            <input id="searchVal" class="margins" type="textbox" placeholder="Search">
+            <button id="search">Search</button>
+            <button id="clear">Clear</button>
+            </label>
+            <label class="margins">
+               Categories:
+               <select id="categories" class="margins">
+                  <option>All</option>
+                  <option>Computers</option>
+                  <option>Cameras</option>
+               </select>
+            </label>
+         </div>      
+      </div>
+      <div id="cartContainer"></div>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+   </body>
+</html>
